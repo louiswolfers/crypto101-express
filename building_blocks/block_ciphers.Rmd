@@ -15,14 +15,14 @@ output:
 
 ```{r setup, include=FALSE}
 library(knitr)
-opts_chunk$set(engine.path = system("which python3"))
+opts_chunk$set(engine.path = "/usr/local/bin/python3")
 ```
 
 # `whoami`
 
 - Louis
 - A4 (majeure objets connectés et cybersécurité)
-- vim, Python
+- ![](images/apple_heart.png){height=1em} vim, ![](images/apple_heart.png){height=1em} Python
 
 # Fonctionnement
 
