@@ -1,0 +1,36 @@
+---
+title: "Crypto101 Express"
+subtitle: "Block ciphers"
+author: "DaVinciCode"
+date: "11/6/2020"
+header-includes:
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    colortheme: "beaver"
+    fonttheme: "structurebold"
+    latex_engine: xelatex
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(engine.path = "/usr/local/bin/python3")
+```
+
+# Rappel
+
+- OTP pas pratiques
+  - taille des données = taille de la clef
+  - problème de distribution des clés
+
+# Rappel
+
+- OTP pas pratiques
+  - taille des données = taille de la clef ![](../emojis/apple_check.png)
+  - problème de distribution des clés
+
+# Chiffrement par bloc
+
+## Définition
