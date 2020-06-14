@@ -20,6 +20,10 @@ opts_chunk$set(engine.path = "/usr/local/bin/python3")
 
 # `whoami`
 
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/esilv.png")
+```
+
 - Louis
 - A4 (majeure objets connectés et cybersécurité)
 - ![](images/apple_heart.png){height=1em} vim, ![](images/apple_heart.png){height=1em} Python
@@ -91,8 +95,6 @@ bin(0b1100 ^ 0b0101)
 - $A \oplus A = 0$
 - $A \oplus 0 = A$
 - $A \oplus 1 = \overline{A}$ ($\overline{1001_2}=0110_2$)
-- $A \oplus B = B \oplus A$
-- $A \oplus 1 = \overline{A}$
 - $A \oplus B = B \oplus A$ (commutativité)
 - $A \oplus (B \oplus C) = (A \oplus B) \oplus C$ (associativité)
 - $B \oplus A \oplus B = A \oplus (B \oplus B) = A$
@@ -103,7 +105,9 @@ bin(0b1100 ^ 0b0101)
 - très simple: $\text{message} \oplus \text{clé}$
 - offre une sécurité théorique absolue (prouvé par Claude Shannon en 1949)
 
-![](images/otp.png)
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/otp.png")
+```
 
 # Limitations
 
@@ -116,30 +120,38 @@ $$c_1 \oplus c_2 = p_1 \oplus p_2$$
 
 - on souhaite envoyer deux images
 
-![](images/otp_keyreuse_1.png){height=200px}
+```{r, echo=FALSE, fig.align='center', out.height = "50%"}
+include_graphics("images/otp_keyreuse_1.png")
+```
 
 # Démo
 
 - avec la même clef
 
-![](images/otp_keyreuse_2.png){height=200px}
+```{r, echo=FALSE, fig.align='center', out.height = "50%"}
+include_graphics("images/otp_keyreuse_2.png")
+```
 
 # Démo
 
 - on envoie alors $P_i \oplus k = C_i$
 
-![](images/otp_keyreuse_3.png){height=200px}
+```{r, echo=FALSE, fig.align='center', out.height = "50%"}
+include_graphics("images/otp_keyreuse_3.png")
+```
 
 # Démo
 
-![](images/otp_keyreuse_4.png){height=200px}
+```{r, echo=FALSE, fig.align='center', out.height = "50%"}
+include_graphics("images/otp_keyreuse_4.png")
+```
 
 # The end?
 
 # The end?
 
 - Peu pratique
-    - 50 GB de données $\Rightarrow$ 50 GB de clef
+    - 50 GB^[GB: gigabytes ou gigaoctets ($10^9$ octets) à ne pas confondre avec Gb (gigabits)] de données $\Rightarrow$ 50 GB de clef
     - Problème de distribution des clés
 
 # Application
@@ -157,4 +169,11 @@ $$c_1 \oplus c_2 = p_1 \oplus p_2$$
 # Analyse du code source
 
 - la clef n'est pas réutilisée ![](images/apple_check.png){height=1em}
-- la clef est aléatoire ![](images/apple_skull.png){height=1em}
+- la clef n'est pas aléatoire ![](images/apple_skull.png){height=1em}
+  - $k=\text{sha256}(\text{t})$ (avec $t$ le nombre de secondes passées depuis le 1er janvier 1970)
+
+# Analyse du code source
+
+- deux options:
+  - `{"option": "get_flag"}` retourne le flag masqué
+  - `{"option": "encrypt_data"}` retourne le message donné en paramètres masqué
