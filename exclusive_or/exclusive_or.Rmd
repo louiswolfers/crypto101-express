@@ -1,5 +1,6 @@
 ---
 title: "Crypto101 Express"
+subtitle: "Exlusive OR"
 author: "DaVinciCode"
 date: "11/6/2020"
 header-includes:
