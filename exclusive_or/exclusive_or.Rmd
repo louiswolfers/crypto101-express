@@ -27,7 +27,8 @@ include_graphics("images/esilv.png")
 
 - Louis
 - A4 (majeure objets connectés et cybersécurité)
-- ![](images/apple_heart.png){height=1em} vim, ![](images/apple_heart.png){height=1em} Python
+- je ne suis pas un expert
+- ![](../emojis/apple_heart.png){height=1em} vim, ![](../emojis/apple_heart.png){height=1em} Python
 
 # Fonctionnement
 
@@ -165,12 +166,12 @@ include_graphics("images/otp_keyreuse_4.png")
 
 # Analyse du code source
 
-- la clef n'est pas réutilisée ![](images/apple_check.png){height=1em}
+- la clef n'est pas réutilisée ![](../emojis/apple_check.png){height=1em}
 
 # Analyse du code source
 
-- la clef n'est pas réutilisée ![](images/apple_check.png){height=1em}
-- la clef n'est pas aléatoire ![](images/apple_skull.png){height=1em}
+- la clef n'est pas réutilisée ![](../emojis/apple_check.png){height=1em}
+- la clef n'est pas aléatoire ![](../emojis/apple_skull.png){height=1em}
   - $k=\text{sha256}(\text{t})$ (avec $t$ le nombre de secondes passées depuis le 1er janvier 1970)
 
 # Analyse du code source
