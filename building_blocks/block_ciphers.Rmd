@@ -133,3 +133,28 @@ $$c_1 \oplus c_2 = p_1 \oplus p_2$$
 # Démo
 
 ![](images/otp_keyreuse_4.png){height=200px}
+
+# The end?
+
+# The end?
+
+- Peu pratique
+    - 50 GB de données $\Rightarrow$ 50 GB de clef
+    - Problème de distribution des clés
+
+# Application
+
+- [https://cryptohack.org/challenges/misc/](https://cryptohack.org/challenges/misc/)
+- Challenge "Gotta go fast"
+- Objectif: trouver une chaine de caractères de la forme `crypto{...}` (_flag_)
+
+# Analyse du code source
+
+# Analyse du code source
+
+- la clef n'est pas réutilisée ![](images/apple_check.png){height=1em}
+
+# Analyse du code source
+
+- la clef n'est pas réutilisée ![](images/apple_check.png){height=1em}
+- la clef est aléatoire ![](images/apple_skull.png){height=1em}
