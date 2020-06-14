@@ -154,7 +154,7 @@ include_graphics("images/otp_keyreuse_4.png")
 
 - Peu pratique
     - 50 GB^[GB: gigabytes ou gigaoctets ($10^9$ octets) à ne pas confondre avec Gb (gigabits)] de données $\Rightarrow$ 50 GB de clef
-    - Problème de distribution des clés
+    - Problème de transmission des clés
 
 # Application
 

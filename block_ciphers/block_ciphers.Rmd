@@ -23,14 +23,26 @@ opts_chunk$set(engine.path = "/usr/local/bin/python3")
 
 - OTP pas pratiques
   - taille des données = taille de la clef
-  - problème de distribution des clés
+  - problème de transmission des clés
 
 # Rappel
 
 - OTP pas pratiques
-  - taille des données = taille de la clef ![](../emojis/apple_check.png)
-  - problème de distribution des clés
+  - taille des données = taille de la clef ![](../emojis/apple_check.png){height=1em}
+  - problème de transmission des clés
 
 # Chiffrement par bloc
 
 ## Définition
+
+Algorithmes qui permettent de chiffrer/déchiffrer des blocs de taille fixe (_e.g._ 16 bytes)
+\[C = E(k, P)\]
+\[P = D(k, C)\]
+
+# Graphique
+
+![](images/block_ciphers.png)
+
+## Remarque
+
+Les algorithmes de chiffrement par bloc font partie de la cryptographie symmétrique du fait que la même clef est utilisée pour le chiffrement et le déchiffrement.
