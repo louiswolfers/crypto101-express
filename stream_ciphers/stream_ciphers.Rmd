@@ -1,0 +1,36 @@
+---
+title: "Crypto101 Express"
+subtitle: "Stream ciphers"
+author: "DaVinciCode"
+date: "`r format(Sys.time(), '%d/%m/%y')`"
+header-includes:
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    colortheme: "beaver"
+    fonttheme: "structurebold"
+    latex_engine: xelatex
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+if(.Platform$OS.type == "unix") {
+	opts_chunk$set(engine.path = system("which python3"))
+} else {
+	opts_chunk$set(engine.path = "/usr/local/bin/python3")
+}
+```
+
+# Rappel
+
+- Chiffrement par bloc
+  - que faire si la taille des données $\neq$ taille d'un bloc?
+  - problème de transmission des clés
+
+# Rappel
+
+- Chiffrement par bloc
+  - **que faire si la taille des données $\neq$ taille d'un bloc?**
+  - problème de transmission des clés
