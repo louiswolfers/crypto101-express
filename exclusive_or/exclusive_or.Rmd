@@ -16,7 +16,11 @@ output:
 
 ```{r setup, include=FALSE}
 library(knitr)
-opts_chunk$set(engine.path = "/usr/local/bin/python3")
+if(.Platform$OS.type == "unix") {
+	opts_chunk$set(engine.path = system("which python3"))
+} else {
+	opts_chunk$set(engine.path = "/usr/local/bin/python3")
+}
 ```
 
 # `whoami`

@@ -16,7 +16,6 @@ output:
 
 ```{r setup, include=FALSE}
 library(knitr)
-os = system("uname -s")
 if(.Platform$OS.type == "unix") {
 	opts_chunk$set(engine.path = system("which python3"))
 } else {
