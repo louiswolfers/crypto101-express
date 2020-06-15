@@ -16,10 +16,10 @@ output:
 
 ```{r setup, include=FALSE}
 library(knitr)
-if(.Platform$OS.type == "unix") {
-	opts_chunk$set(engine.path = system("which python3"))
-} else {
+if(Sys.info()["sysname"] == "Darwin") {
 	opts_chunk$set(engine.path = "/usr/local/bin/python3")
+} else {
+	opts_chunk$set(engine.path = system("which python3"))
 }
 ```
 
@@ -178,7 +178,7 @@ $$\iff \mathit{DEC}_{k_2}(C) = \mathit{ENC}_{k_1}(P)$$
 
 # Toujours des inconvenients
 
-- et si la taille du message n'est pas un multiple de la clef?
+- comment faire pour chiffrer un message de longueur indeterminée ?
 - problème de transmission des clés
 
 ```{r, echo=FALSE, fig.align='center', out.width = "50%"}
