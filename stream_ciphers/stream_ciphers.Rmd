@@ -34,3 +34,98 @@ if(Sys.info()["sysname"] == "Darwin") {
 - Chiffrement par bloc
   - **comment faire pour chiffrer un message de longueur indéterminée?**
   - problème de transmission des clés
+
+# Avec le chiffrement par blocs
+
+- diviser le message par blocs et les chiffrer indépendamment
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/ecb_mode.png")
+```
+
+- on appelle ce mode d'opération le mode ECB (Electronic codebook)
+- $$C_{i} = E_{k}(P_{i})$$
+
+# Désavantages du mode ECB
+
+- deux blocs identiques seront chiffrés de la même manière
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/ecb_mode_weakness.png")
+```
+
+# Démo - Message
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/tux.jpg")
+```
+
+# Démo - Chiffrement idéal
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/tux_noise.jpg")
+```
+
+# Démo - Chiffrement avec ECB
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/tux_ecb.jpg")
+```
+
+# CBC mode
+
+- Cipher block chaining
+- $C_{i} = E_{k}(P_{i} \oplus C_{i-1})$
+- On XOR chaque bloc $P_i$ par le bloc chiffré $C_{i-1}$ précédent pour brouiller les motifs
+  - deux blocs égaux ne seront pas chiffrés de la même manière
+
+# Graphique - Chiffrement avec CBC
+
+```{r, echo=FALSE, fig.align='center', out.width = "75%"}
+include_graphics("images/cbc_encryption.png")
+```
+
+- $C_{0} = IV$ (initialization vector)
+
+# Graphique - Déchiffrement avec CBC
+
+```{r, echo=FALSE, fig.align='center', out.width = "75%"}
+include_graphics("images/cbc_decryption.png")
+```
+
+- $P_{i} = D_{k}(C_{i}) \oplus C_{i-1}$
+
+# Initialization vector
+
+- il est envoyé avec le message chiffré
+- il doit être imprévisible, **mais pas secret**
+    - il ne doit surtout pas être égal à la clef
+
+# Attaques si l'IV est prévisible
+
+- imaginons le site d'une banque qui utilise le mode CBC pour chiffrer les données de ses clients
+  - pour simplifier, 1 solde $\Rightarrow$ 1 bloc
+  - on peut actualiser notre solde
+- base de données:
+
+| Client  | Solde                             |
+|---------|-----------------------------------|
+| Alice   | $C_{A}=E(k, IV_{A} \oplus P_{A})$ |
+| Mallory | $C_{M}=E(k, IV_{M} \oplus P_{M})$ |
+| Bob     | $C_{B}=E(k, IV_{B} \oplus P_{B})$ |
+
+# Attaques si l'IV est prévisible
+
+- Mallory est maline 
+  - elle arrive à prédire les IV qui ont été utilisés pour chiffrer les données pour chaque client ($IV_{A}, IV_{M}, IV_{B}$)
+  - elle a accès à la base de données chiffrées
+
+1. elle actualise son solde $P_{M}=IV_{M} \oplus IV_{A} \oplus G$
+2. la banque actualise la base de données:
+$C_{M} = E(k, IV_{M} \oplus P_{M})$
+$\iff C_{M} = E(k, IV_{M} \oplus (IV_{M} \oplus IV_{A} \oplus G))$
+$\iff C_{M} = E(k, IV_{A} \oplus G)$
+3. si $C_{M} = C_{A}$, alors Mallory a trouvé le solde d'Alice ($G$)
+
+## Remarque
+Cette banque aurait aussi du avoir une clé $k$ différente pour chaque client
