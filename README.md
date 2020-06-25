@@ -6,6 +6,6 @@ Cours de cryptographie proposé par DaVinciCode, le pôle cybersécurité de l'a
 
 ## Liens vers les slides
 
-- [Exclusive OR](https://github.com/louiswolfers/crypto101-express/raw/master/exclusive_or/exclusive_or.pdf)
-- [Block ciphers](https://github.com/louiswolfers/crypto101-express/raw/master/block_ciphers/block_ciphers.pdf)
-- [Stream ciphers](https://github.com/louiswolfers/crypto101-express/raw/master/block_ciphers/stream_ciphers.pdf)
+- [Exclusive OR](https://github.com/louiswolfers/crypto101-express/blob/master/exclusive_or/exclusive_or.pdf)
+- [Block ciphers](https://github.com/louiswolfers/crypto101-express/blob/master/block_ciphers/block_ciphers.pdf)
+- [Stream ciphers](https://github.com/louiswolfers/crypto101-express/blob/master/block_ciphers/stream_ciphers.pdf)
