@@ -192,4 +192,4 @@ print(plaintext)
 # Toujours des problèmes >:(
 
 - chiffrer n'importe quel message de manière sécurisée ![](../emojis/apple_check.png){height=1em}
-- problème de transmission des clefs ![](../emojis/google_cross.png){height=1em}
+- problème de transmission des clés ![](../emojis/google_cross.png){height=1em}

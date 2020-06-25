@@ -1,0 +1,31 @@
+---
+title: "Crypto101 Express"
+subtitle: "Key Exchange"
+author: "DaVinciCode"
+date: "`r format(Sys.time(), '%d/%m/%y')`"
+header-includes:
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    colortheme: "beaver"
+    fonttheme: "structurebold"
+    latex_engine: xelatex
+    includes:
+      in_header: header.tex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+if(Sys.info()["sysname"] == "Darwin") {
+	opts_chunk$set(engine.path = "/usr/local/bin/python3")
+} else {
+	opts_chunk$set(engine.path = system("which python3"))
+}
+```
+
+# Rappel
+
+- chiffrer un message de taille aléatoire efficacement ![](../emojis/apple_check.png){height=1em}
+- problème de transmission des clés ![](../emojis/google_cross.png){height=1em}
+
+
