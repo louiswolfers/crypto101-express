@@ -28,4 +28,59 @@ if(Sys.info()["sysname"] == "Darwin") {
 - chiffrer un message de taille aléatoire efficacement ![](../emojis/apple_check.png){height=1em}
 - problème de transmission des clés ![](../emojis/google_cross.png){height=1em}
 
+# Ce que l'on cherche à faire
 
+- Alice et Bob
+  - veulent se mettre d'accord et trouver un secret commun (une clef par exemple)
+  - ils communiquent via un canal qui n'est pas sécurisé (n'importe qui peut voir les messages qu'ils s'échangent)
+
+# Protocole Diffie-Hellman
+
+- Whitfield Diffie et Martin Hellman
+- se base sur le fait que certains problèmes mathématiques sont faciles à résoudre dans un sens, mais pas dans l'autre
+
+# Protocole Diffie-Hellman
+
+- analogie avec des pots de couleurs
+- mélanger deux couleurs est facile, mais l'opération inverse est très compliquée
+- nous allons suivre la suite de messages échangés par Alice et Bob
+  - Eve a accès à tout ces messages
+
+# Protocole Diffie-Hellman
+
+- Alice et Bob se mettent d'accord sur une couleur de base
+
+```{r, echo=FALSE, fig.align='center', out.width = "35%"}
+include_graphics("images/dh_1.png")
+```
+
+# Protocole Diffie-Hellman 
+
+- Alice et Bob choissisent tous les deux une couleur aléatoirement, et la mélangent avec la couleur de base
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/dh_2.png")
+```
+
+# Protocole Diffie-Hellman 
+
+- Alice et Bob s'échangent les mélanges qu'ils ont fait
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/dh_3.png")
+```
+
+# Protocole Diffie-Hellman
+
+- Alice mélange la couleur que Bob lui a envoyé avec sa couleur secrete 
+- Bob mélange la couleur qu'Alice lui a envoyé avec sa couleur secrete 
+
+```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+include_graphics("images/dh_4.png")
+```
+
+# Protocole Diffie-Hellman
+
+- Problème du logarithme discret: $y \equiv g^{x} \pmod p$
+  - calculer $x$ sachant $y, g, p$ est très compliqué
+- $(g, p)$: couleur de base
