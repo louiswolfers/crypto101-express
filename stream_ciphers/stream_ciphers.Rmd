@@ -46,6 +46,17 @@ include_graphics("images/ecb_mode.png")
 - on appelle ce mode d'opération le mode ECB (Electronic codebook)
 - $$C_{i} = E_{k}(P_{i})$$
 
+# Padding
+
+- comment faire si on veut chiffrer un message si sa taille n'est pas un multiple de la taille du bloc?
+  - on rajoute un padding (rembourrage)
+
+# Padding
+
+- rajouter des zeros (le message ne peut donc pas finir par un byte nul)
+- PKCS#7: si il nous manque 5 bytes pour que la taille soit un multiple de la taille du bloc, on rajoute: `05 05 05 05 05`
+  - si on veut vraiment finir le message avec 5 bytes `05`, on rajoute un bloc entier de padding (`08 08 08 08 08 08 08 08`)
+
 # Désavantages du mode ECB
 
 - deux blocs identiques seront chiffrés de la même manière
@@ -129,3 +140,56 @@ $\iff C_{M} = E(k, IV_{A} \oplus G)$
 
 ## Remarque
 Cette banque aurait aussi du avoir une clé $k$ différente pour chaque client
+
+# CTR mode
+
+- **counter** mode
+- nonce (number used once) à ne pas réutiliser
+- $C_{i}=P_{i} \oplus E(k, N||00...||i)$
+
+# CTR mode - Graphique
+
+```{r, echo=FALSE, fig.align='center', out.width = "75%"}
+include_graphics("images/ctr.png")
+```
+
+# Salsa20
+
+- **native** stream cipher
+- état de l'art
+- créé par Dan Bernstein
+- ARX (add, rotate, XOR) design
+  - $x\leftarrow x \oplus (y \boxplus z) \lll n$
+  - modular addition: $\boxplus$
+  - rotation: $\lll$
+
+# Salsa20 sur Python (chiffrement)
+
+```{python}
+from Crypto.Cipher import Salsa20
+
+plaintext = b'TOP_SECRET'
+secret = b'\x13\x37'*16 # 32-byte key
+cipher = Salsa20.new(key=secret)
+msg = cipher.nonce + cipher.encrypt(plaintext)
+print(msg[:8])
+print(msg[8:])
+```
+
+# Salsa20 sur Python (déchiffrement)
+
+```{python}
+from Crypto.Cipher import Salsa20
+
+secret = b'\x13\x37'*16
+msg_nonce = b't\xe6\x0f\x142c\xe40'
+ciphertext = b'\xe8\x8d\xfb\x9c\xce[@\xb5\x1aP'
+cipher = Salsa20.new(key=secret, nonce=msg_nonce)
+plaintext = cipher.decrypt(ciphertext)
+print(plaintext)
+```
+
+# Toujours des problèmes >:(
+
+- chiffrer n'importe quel message de manière sécurisée ![](../emojis/apple_check.png){height=1em}
+- problème de transmission des clefs ![](../emojis/google_cross.png){height=1em}
