@@ -16,23 +16,21 @@ output:
 
 ```{r setup, include=FALSE}
 library(knitr)
-if(.Platform$OS.type == "unix") {
-	opts_chunk$set(engine.path = system("which python3"))
-} else {
+if(Sys.info()["sysname"] == "Darwin") {
 	opts_chunk$set(engine.path = "/usr/local/bin/python3")
+} else {
+	opts_chunk$set(engine.path = system("which python3"))
 }
 ```
 
 # `whoami`
 
-```{r, echo=FALSE, fig.align='center', out.width = "50%"}
+```{r, echo=FALSE, fig.align='center', out.width = "20%"}
 include_graphics("images/esilv.png")
 ```
 
 - Louis
 - A4 (majeure objets connectés et cybersécurité)
-- je ne suis pas un expert
-- ![](../emojis/apple_heart.png){height=1em} vim, ![](../emojis/apple_heart.png){height=1em} Python
 
 # Fonctionnement
 
@@ -45,7 +43,7 @@ include_graphics("images/esilv.png")
 - Par exemple, 27 s’écrit
 
 | $1$   | $1$   | $0$   | $1$   | $1$   |
-|:-----:|:-----:|:-----:|:-----:|:-----:|
+|-------|-------|-------|-------|-------|
 | $2^4$ | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
 | $16$  | $8$   | $0$   | $2$   | $1$   |
 
@@ -63,6 +61,10 @@ bin(27)
 
 ```{python}
 bytes.fromhex('deadbeef') == b'\xde\xad\xbe\xef'
+```
+
+```{python}
+bytes.fromhex('6465616462656566') == b'deadbeef'
 ```
 
 # ASCII
