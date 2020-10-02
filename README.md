@@ -9,3 +9,5 @@ Cours de cryptographie proposé par DaVinciCode, le pôle cybersécurité de l'a
 - [Exclusive OR](https://github.com/louiswolfers/crypto101-express/raw/master/exclusive_or/exclusive_or.pdf)
 - [Block ciphers](https://github.com/louiswolfers/crypto101-express/raw/master/block_ciphers/block_ciphers.pdf)
 - [Stream ciphers](https://github.com/louiswolfers/crypto101-express/raw/master/stream_ciphers/stream_ciphers.pdf)
+- [Key exchange](https://github.com/louiswolfers/crypto101-express/raw/master/key_exchange/key_exchange.pdf)
+- [Public-key encryption](https://github.com/louiswolfers/crypto101-express/raw/master/public_key_encryption/public_key_encryption.pdf)
