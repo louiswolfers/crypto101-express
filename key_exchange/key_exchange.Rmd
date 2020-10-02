@@ -72,8 +72,8 @@ include_graphics("images/dh_3.png")
 
 # Protocole Diffie-Hellman
 
-- Alice mélange la couleur que Bob lui a envoyé avec sa couleur secrete 
-- Bob mélange la couleur qu'Alice lui a envoyé avec sa couleur secrete 
+- Alice mélange la couleur que Bob lui a envoyé avec sa couleur secrète 
+- Bob mélange la couleur qu'Alice lui a envoyé avec sa couleur secrète 
 
 ```{r, echo=FALSE, fig.align='center', out.width = "50%"}
 include_graphics("images/dh_4.png")
@@ -84,3 +84,37 @@ include_graphics("images/dh_4.png")
 - Problème du logarithme discret: $y \equiv g^{x} \pmod p$
   - calculer $x$ sachant $y, g, p$ est très compliqué
 - $(g, p)$: couleur de base
+- $x$: couleur secrète
+- $y$: couleur de base mélangée avec leur couleur secrète
+
+# Protocole Diffie-Hellman
+
+- Quand Bob et Alice choisissent leur nombre secret:
+  - Alice envoie à Bob $m_{A} \equiv g^{r_{A}} \pmod p$
+  - Bob envoie à Alice $m_{B} \equiv g^{r_{B}} \pmod p$
+- Ils calculent ensuite:
+  - $s \equiv (g^{r_{A}})^{r_{B}} \pmod p$ (Alice)
+  - $s \equiv (g^{r_{B}})^{r_{A}} \pmod p$ (Bob)
+- Eve, n'ayant que $\{g^{r_{A}}, g^{r_{B}}, g, p\}$ ne peut pas calculer $s$.
+
+# ProblemzZzZzZZz
+
+- ils communiquent via un canal qui n'est pas sécurisé
+  - n'importe qui peut voir les messages qu'ils s'échangent
+
+# ProblemzZzZzZZz
+
+- ils communiquent via un canal qui n'est pas sécurisé
+  - n'importe qui peut voir les messages qu'ils s'échangent
+  - n'importe qui peut faire semblant d'être Alice ou Bob (man-in-the-middle attack)
+
+# ProblemzZzZzZZz
+
+- Alice $\equiv$ Mallory $\equiv$ Bob
+  - Mallory fait deux communications
+    - Une avec Alice en se faisant passer par Bob
+    - Une avec Bob en se faisant passer par Alice
+
+# ProblemzZzZzZZz 
+
+- Public-key encryption
