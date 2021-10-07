@@ -12,6 +12,7 @@ output:
     latex_engine: xelatex
     includes:
       in_header: header.tex
+classoption: "aspectratio=169"
 ---
 
 ```{r setup, include=FALSE}

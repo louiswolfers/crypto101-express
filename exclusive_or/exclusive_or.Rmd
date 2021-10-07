@@ -12,6 +12,7 @@ output:
     latex_engine: xelatex
     includes:
       in_header: header.tex
+classoption: "aspectratio=169"
 ---
 
 ```{r setup, include=FALSE}
@@ -25,16 +26,19 @@ if(Sys.info()["sysname"] == "Darwin") {
 
 # `whoami`
 
-```{r, echo=FALSE, fig.align='center', out.width = "20%"}
-include_graphics("images/esilv.png")
+```{r, echo=FALSE, fig.show='hold', fig.align='center', out.width = "20%"}
+include_graphics("../images/esilv.png")
+include_graphics("../images/davincicode.png")
 ```
 
 - Louis
-- A4 (majeure objets connectés et cybersécurité)
+- A5 IOS
+- Vice-président de DaVinciCode
 
-# Fonctionnement
+# Ressources
 
 - livre Crypto101 ([crypto101.io](https://crypto101.io/))
+- livre _Introduction to Mathematical Cryptography_
 - challenges Cryptohack ([cryptohack.org](https://cryptohack.org/))
 
 # Binaire
